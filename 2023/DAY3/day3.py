@@ -45,6 +45,8 @@ with open ('day3_input.txt', 'r') as engine_schematic:
                 # pattern = number preceded and followed by any non-digit character == \D
                 # or start of line ^ or end of line or string $
                 pattern = f'(^|\D)({n})(\D|$)'
+                # finditer returns match object with indices and stuff
+                # findall just returns the found substrings
                 line_num = [m.span(0)  for m in re.finditer(pattern, line)]
                 
                 if len(line_num) == 1: #nonempty, number once in line
@@ -164,14 +166,9 @@ get_part_numbers(gears_pos, engine, str_engine, where_nums,
 get_part_numbers(all_symbols_pos, engine, str_engine, where_nums,
                   gears = False)
 
-
-
-
-
-
 ############# THE ANSWER
-# P1: 531932 after checking only number portion of line nums ()
-# P2: 
+# P1: 531932 after checking only number portion of line nums () (12 tries lol)
+# P2: 73646890 (first try)
 ###########
 
 # WRONG!
