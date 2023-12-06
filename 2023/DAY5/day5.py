@@ -28,6 +28,7 @@ with open('day5_input.txt', 'r') as almanac:
             
             
         # any number separated by word boundary
+        breakpoint()
         nums = re.findall(r"\b(\d+)\b",
                           line)
         # add line numbers to current map list
