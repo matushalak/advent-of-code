@@ -56,7 +56,6 @@ def is_game_possible(known_contents:list[int,int,int],
     # print(game_contents)
     # print(mins, cumprod(mins)[-1])
     # print(game)
-    
     return (all(possible_colors), cumprod(mins)[-1])
 
 possible_games = [] # part 1

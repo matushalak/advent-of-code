@@ -42,7 +42,8 @@ def get_times_records (input_file,
     return max_race_times, record_distances
 
 def find_ways_to_beat (input_f,
-                       bad_kerning = False):
+                       bad_kerning = False,
+                       optimize = False):
     ways_to_beat = []
     speeds_that_beat = []
     

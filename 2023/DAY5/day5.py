@@ -28,7 +28,6 @@ with open('day5_input.txt', 'r') as almanac:
             
             
         # any number separated by word boundary
-        breakpoint()
         nums = re.findall(r"\b(\d+)\b",
                           line)
         # add line numbers to current map list
@@ -72,13 +71,20 @@ for map_nam in list(maps)[1:-1]:
 
 # print(big_dict)
 
-def find_locations(seeds:list,
+def find_locations(maps:dict,
                   big_dict:dict,
                   seed_ranges:bool = False) -> list:
     locations = []
+    if seed_ranges == False:
+        seeds = maps['seeds'][0]
+    
+    else:
+        seeds = maps['seed_ranges']
+    
     for seed in seeds:
         output = seed # start with seed as the key
         # print(output)
+        
         for now_map in list(big_dict.values()):
             # loop through the tuples, if number >= than source[0] and < source[1]
                 # match it to destination by (number - source[0]) + destination[0]
@@ -101,7 +107,7 @@ def find_locations(seeds:list,
     
     return locations
 
-locs = find_locations(maps['seeds'][0],
+locs = find_locations(maps,
                       big_dict)
 
 print('Part1:', min(locs)) # 57075758
